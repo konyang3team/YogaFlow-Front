@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css" media="(min-width:600px)">
+    <link rel="stylesheet" href="./company_mobile.css" media="(max-width:600px)">
+</head>
+<body>
+    <div id="page">
+        <header>
+            <div id="logo">
+                <img src="./logo.png" alt="Logo">
+            </div>
+
+            <div id="top_menu">
+                <a href="login.html">LOGIN</a> |
+                <a href="#">JOIN</a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">HOME</a></li>
+                    <li><a href="START.html">START</a></li>
+                    <li><a href="ABOUT.html">ABOUT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <article id="content">
+            <section id="main">
+                <div class="login_container">
+                    <h2>로그인</h2>
+                    <div class="id_pw_wrap">
+                        <div class="input_row" id="id_line">
+                            <div class="icon_cell" id="id_cell">
+                                <span class="icon_id">
+                                    <span class="blind">아이디</span>
+                                </span>
+                            </div>
+                            <input type="text" id="id" name="id" placeholder="아이디" title="아이디" class="input_text" maxlength="41" value="">
+                            <span role="button" class="btn_delete" id="id_clear" style="display: none;">
+                                <span class="icon_delete">
+                                    <span class="blind">삭제</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="input_row" id="pw_line">
+                            <div class="icon_cell" id="pw_cell">
+                                <span class="icon_pw">
+                                    <span class="blind">비밀번호</span>
+                                </span>
+                            </div>
+                            <input type="password" id="pw" name="pw" placeholder="비밀번호" title="비밀번호" class="input_text" maxlength="16">
+                            <span role="button" class="btn_delete" id="pw_clear" style="display: none;">
+                                <span class="icon_delete">
+                                    <span class="blind">삭제</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="login_error_wrap" id="err_capslock" style="display: none;">
+                            <div class="error_message">
+                                <strong>CapsLock</strong>이 켜져 있습니다.
+                            </div>
+                        </div>
+                        <div class="login_error_wrap" id="err_empty_id" style="display: none;">
+                            <div class="error_message">
+                                <strong>아이디</strong>를 입력해 주세요.
+                            </div>
+                        </div>
+                        <div class="login_error_wrap" id="err_empty_pw" style="display: none;">
+                            <div class="error_message">
+                                <strong>비밀번호</strong>를 입력해 주세요.
+                            </div>
+                        </div>
+                        <div class="login_error_wrap" id="err_common" style="display:none;">
+                            <div class="error_message" style="width:90%"></div>
+                        </div>
+                        <div class="btn_login_wrap">
+                            <button type="submit" class="btn_login" id="log.login">
+                                <span class="btn_text">로그인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+</body>
+</html>
