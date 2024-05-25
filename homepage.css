@@ -63,3 +63,7 @@ nav li a {
 page{
     width: 820px; margin: 0px auto;
 }
+
+.main {
+    display: flex;
+}
