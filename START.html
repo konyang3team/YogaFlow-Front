@@ -29,6 +29,7 @@
                 <div id="label-container">
                     <div id="label"></div>
                     <div id="prediction"></div>
+                    <div id="explain"></div>
                 </div>
             </div>
         </article>
@@ -39,6 +40,21 @@
     <script type="text/javascript">
         const URL = "https://teachablemachine.withgoogle.com/models/ulTP55507/";
         let model, webcam, ctx, maxPredictions;
+
+        const labelNames = {
+            "warrior_pose_correct": "워리어 자세",
+            "table_pose_correct": "테이블 자세",
+            "tree_pose_correct": "나무 자세",
+            "triangle_pose_correct": "삼각형 자세",
+        }
+
+
+        const explains = {
+            "warrior_pose_correct": "워리어 자세에 대한 설명",
+            "table_pose_correct": "테이블 자세에 대한 설명",
+            "tree_pose_correct": "나무 자세에 대한 설명",
+            "triangle_pose_correct": "삼각형 자세에 대한 설명",
+        }
 
         async function init() {
             const modelURL = URL + "model.json";
@@ -74,9 +90,12 @@
             const maxValue = prediction.reduce((max, pred) => pred.probability > max.probability ? pred : max)
             
             const labelElement = document.getElementById("label")
-            labelElement.innerText = maxValue.className
+            labelElement.innerText = labelNames[maxValue.className]
             const predictionElement = document.getElementById("prediction")
             predictionElement.innerText = (maxValue.probability * 100).toFixed(2) + "%";
+
+            const explainElement = document.getElementById("explain")
+            explainElement.innerText = explains[maxValue.className]
 
             drawPose(pose);
         }
